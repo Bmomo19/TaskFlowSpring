@@ -2,10 +2,7 @@ package com.taskflow.taskflowspring.entity;
 
 import com.taskflow.taskflowspring.helpers.Role;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,11 +10,10 @@ import java.util.Date;
 
 @Entity
 @Table(name = "users")
-@NoArgsConstructor
-@AllArgsConstructor
+@Data
 @Getter
 @Setter
-public class UserEntity {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,6 +22,8 @@ public class UserEntity {
 
     @Column(unique = true, nullable = false)
     private String email;
+
+    private String username;
 
     @Column(nullable = false)
     private String password;
@@ -44,3 +42,7 @@ public class UserEntity {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updatedAt = new Date();
 }
+
+
+
+

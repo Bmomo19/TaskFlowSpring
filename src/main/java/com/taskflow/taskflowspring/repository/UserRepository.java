@@ -1,12 +1,13 @@
 package com.taskflow.taskflowspring.repository;
 
-import com.taskflow.taskflowspring.entity.UserEntity;
+import com.taskflow.taskflowspring.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
-    Optional<UserEntity> findByEmail(String email);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByUsername(String username);
+
 }

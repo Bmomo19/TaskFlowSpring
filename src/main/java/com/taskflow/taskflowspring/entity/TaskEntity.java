@@ -33,7 +33,7 @@ public class TaskEntity {
 
     @ManyToOne
     @JoinColumn(name = "id", nullable = false)
-    private UserEntity user;
+    private User user;
 
     @Basic(optional = false)
     @CreationTimestamp
